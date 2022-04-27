@@ -838,24 +838,20 @@ a:focus {
     Dedicated mobile nav component
 */
 
+
 .c-mobile-nav {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     height: 100vh;
-    /* display: none; */
-    opacity: 0;
     pointer-events: none;
-    transition: opacity .25s;
+    transition: transform .25s ease;
 }
 
-/* zorgt ervoor dat je op de burger klikt en de menu ziet */
 .has-mobile-nav .c-mobile-nav {
-    /* display: block; */
     opacity: 1;
     pointer-events: auto;
-    /* alle items worden door pointer nu klikbaar */
 }
 
 .c-mobile-nav__header {
@@ -866,11 +862,16 @@ a:focus {
 }
 
 .c-mobile-nav__bg {
-
+    opacity: 0.5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #202024;
+    transition: opacity .25s ease;
 }
 
 .has-mobile-nav .c-mobile-nav__bg {
-
 }
 
 .c-mobile-nav__body {
@@ -879,9 +880,12 @@ a:focus {
     height: 100vh;
     width: 100vw;
     background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
 }
 
 .has-mobile-nav .c-mobile-nav__body {
+    transform: translateX(0%);
 }
 
 @media (min-width: 768px) {
